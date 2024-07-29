@@ -92,7 +92,6 @@ const categories = ref(['技术', '读书', '旅行'])
   scrollbar-width: 1px;
 }
 .main-wrapper-post {
-  padding: 20px;
-  background-color: #fff;
+  background-color: #ffffff80;
 }
 </style>
