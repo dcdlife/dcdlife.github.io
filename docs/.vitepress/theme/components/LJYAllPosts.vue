@@ -39,6 +39,7 @@ function postClick(post: ContentData) {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  margin: 5px 0;
   cursor: pointer;
 }
 .wrapper-post:hover {

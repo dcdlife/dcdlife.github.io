@@ -1,18 +1,67 @@
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue'
-import { useData } from 'vitepress'
+import { onMounted, computed, watch, ref, reactive } from 'vue'
+import { useData, useRoute, useRouter, ContentData } from 'vitepress'
 import VPContent from 'vitepress/dist/client/theme-default/components/VPContent.vue'
 import { data as posts } from './posts.data.mts'
 import LJYAllPosts from './components/LJYAllPosts.vue'
 
 const { frontmatter } = useData()
-console.log(frontmatter)
+const route = useRoute()
+const router = useRouter()
+const curCategory = ref('all')
+const homeData = reactive({
+  allPosts: posts
+})
+
+// watch(route, (newRoute) => {
+//   console.log('newRoute', newRoute)
+// })
+
+const filterPosts = computed(() => {
+  const fullPosts: Array<ContentData> = posts as Array<ContentData>
+  if (curCategory.value == 'all' || !curCategory.value.length) {
+    return fullPosts
+  }
+
+  console.log(curCategory.value)
+  const filterPosts = fullPosts.filter((post) => {
+    return post.frontmatter['category'] == curCategory.value
+  })
+
+  return filterPosts
+})
+
+const categories = [
+  {
+    name: '全部',
+    en: 'all',
+    link: '/'
+  },
+  {
+    name: '读书',
+    en: 'books',
+    link: '/books'
+  },
+  {
+    name: '写作',
+    en: 'writes',
+    link: '/writes'
+  },
+  {
+    name: '技术',
+    en: 'tech',
+    link: '/tech'
+  }
+]
 
 onMounted(() => {
   console.log(posts)
 })
 
-const categories = ref(['技术', '读书', '旅行'])
+function categoryItemClick(cagegory) {
+  curCategory.value = cagegory.en
+  router.go('/')
+}
 </script>
 
 <template>
@@ -27,9 +76,21 @@ const categories = ref(['技术', '读书', '旅行'])
         <div class="categories"></div>
       </aside>
       <main class="main">
+        <div style="display: flex; flex-direction: row; padding-bottom: 10px">
+          <div
+            class="cagegory-item"
+            :class="[
+              cagegory.en == curCategory ? 'cagegory-item-selected' : ''
+            ]"
+            v-for="cagegory in categories"
+            @click="categoryItemClick(cagegory)"
+          >
+            {{ cagegory.name }}
+          </div>
+        </div>
         <LJYAllPosts
           v-if="frontmatter.layout == 'home'"
-          :posts="posts"
+          :posts="filterPosts"
         ></LJYAllPosts>
         <div v-else class="main-wrapper-post">
           <!-- <Content /> -->
@@ -88,10 +149,22 @@ const categories = ref(['技术', '读书', '旅行'])
   overflow-y: auto;
   border-radius: 4px;
   /* scrollbar-width: none; */
-  scrollbar-color: #fff transparent;
+  scrollbar-color: #ffffff80 transparent;
   scrollbar-width: 1px;
 }
 .main-wrapper-post {
   background-color: #ffffff80;
+}
+.cagegory-item {
+  height: 45px;
+  line-height: 45px;
+  padding: 0 30px;
+  background-color: rgba(5, 3, 48, 0.255);
+  border-radius: 10%;
+  margin-right: 20px;
+  color: #fff;
+}
+.cagegory-item-selected {
+  background-color: rgba(5, 3, 48, 0.655);
 }
 </style>
