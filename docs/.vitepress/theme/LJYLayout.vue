@@ -28,7 +28,7 @@ const filterPosts = computed(() => {
     return post.frontmatter['category'] == curCategory.value
   })
 
-  return filterPosts
+  return filterPosts.reverse()
 })
 
 const categories = [
