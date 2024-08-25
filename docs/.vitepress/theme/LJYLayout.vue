@@ -8,7 +8,7 @@ import LJYAllPosts from './components/LJYAllPosts.vue'
 const { frontmatter } = useData()
 const route = useRoute()
 const router = useRouter()
-const curCategory = ref('all')
+const curCategory = ref('learns')
 const homeData = reactive({
   allPosts: posts
 })
@@ -38,17 +38,22 @@ const categories = [
     link: '/'
   },
   {
-    name: '读书',
+    name: '读点书',
     en: 'books',
     link: '/books'
   },
   {
-    name: '写作',
+    name: '写点啥',
     en: 'writes',
     link: '/writes'
   },
   {
-    name: '技术',
+    name: '学点啥',
+    en: 'learns',
+    link: '/learns'
+  },
+  {
+    name: '搞点技术',
     en: 'tech',
     link: '/tech'
   }
