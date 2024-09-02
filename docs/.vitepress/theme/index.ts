@@ -2,7 +2,7 @@
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import LJYLayout from './LJYLayout.vue'
+import DSLayout from './DSLayout.vue'
 import './style.css'
 
 export default {
@@ -12,7 +12,7 @@ export default {
   //     // https://vitepress.dev/guide/extending-default-theme#layout-slots
   //   });
   // },
-  Layout: LJYLayout,
+  Layout: DSLayout,
   enhanceApp({ app, router, siteData }) {
     // ...
   }
