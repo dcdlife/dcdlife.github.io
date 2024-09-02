@@ -56,6 +56,11 @@ const categories = [
     name: '搞点技术',
     en: 'tech',
     link: '/tech'
+  },
+  {
+    name: '人物',
+    en: 'person',
+    link: '/person'
   }
 ]
 
@@ -73,9 +78,8 @@ function categoryItemClick(cagegory) {
   <div class="app">
     <div class="main-content">
       <aside class="aside">
-        <h1 class="title">六捡一</h1>
+        <h1 class="title">点石</h1>
         <div style="margin-top: 20px">
-          <p>一个人一定是读了大量的书，才能形成丰富的价值观和世界观。</p>
           <br />
           <p>巴菲特都比你有时间。</p>
           <br />
