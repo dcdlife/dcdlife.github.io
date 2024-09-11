@@ -78,13 +78,17 @@ function categoryItemClick(cagegory) {
   <div class="app">
     <div class="main-content">
       <aside class="aside">
-        <h1 class="title">点石</h1>
+        <h1 class="title">六检一</h1>
         <div style="margin-top: 20px">
           <br />
           <p>巴菲特都比你有时间。</p>
           <br />
           <p>
             王尔德说：很多人觉得自己活在世上，实际上只是在世上，并没有怎么活。
+          </p>
+          <br />
+          <p>
+            人这一辈子很快的，总得活得精彩点，不给别人看，咱自己觉得精彩就够了。
           </p>
         </div>
         <div class="categories"></div>
