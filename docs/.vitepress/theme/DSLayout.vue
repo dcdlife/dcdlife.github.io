@@ -76,7 +76,7 @@ function categoryItemClick(cagegory) {
 
 <template>
   <div class="app">
-    <div class="main-content">
+    <div class="app-content">
       <aside class="aside">
         <h1 class="title">六检一</h1>
         <div style="margin-top: 20px">
@@ -90,6 +90,8 @@ function categoryItemClick(cagegory) {
           <p>
             人这一辈子很快的，总得活得精彩点，不给别人看，咱自己觉得精彩就够了。
           </p>
+          <br />
+          <p>如果没有人赏识你，咱自己也得赏识自己。</p>
         </div>
         <div class="categories"></div>
       </aside>
@@ -106,13 +108,14 @@ function categoryItemClick(cagegory) {
             {{ cagegory.name }}
           </div>
         </div>
-        <LJYAllPosts
-          v-if="frontmatter.layout == 'home'"
-          :posts="filterPosts"
-        ></LJYAllPosts>
-        <div v-else class="main-wrapper-post">
-          <!-- <Content /> -->
-          <VPContent></VPContent>
+        <div class="main-content">
+          <LJYAllPosts
+            v-if="frontmatter.layout == 'home'"
+            :posts="filterPosts"
+          ></LJYAllPosts>
+          <div v-else class="main-wrapper-post">
+            <VPContent></VPContent>
+          </div>
         </div>
       </main>
     </div>
@@ -130,8 +133,9 @@ function categoryItemClick(cagegory) {
   background: url(./images/theme-bg2.jpg) no-repeat center center;
   background-size: cover;
   overflow: hidden;
+  background-color: transparent;
 }
-.main-content {
+.app-content {
   min-width: 800px;
   width: 100%;
   height: 80%;
@@ -164,11 +168,18 @@ function categoryItemClick(cagegory) {
 .main {
   margin-left: 50px;
   flex: 1;
-  overflow-y: auto;
+  flex-direction: column;
+}
+.main-content {
+  height: calc(100% - 75px);
   border-radius: 4px;
-  /* scrollbar-width: none; */
-  scrollbar-color: #ffffff80 transparent;
+  scrollbar-color: #ffffff transparent;
   scrollbar-width: 1px;
+  overflow-y: scroll;
+  padding-right: 20px;
+}
+.main-wrapper-all-post {
+  background-color: transparent;
 }
 .main-wrapper-post {
   background-color: #ffffff80;
