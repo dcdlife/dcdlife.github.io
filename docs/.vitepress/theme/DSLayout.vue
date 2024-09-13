@@ -53,7 +53,7 @@ const categories = [
     link: '/learns'
   },
   {
-    name: '搞点技术',
+    name: '技术',
     en: 'tech',
     link: '/tech'
   },
