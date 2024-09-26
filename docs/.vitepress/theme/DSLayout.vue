@@ -2,8 +2,10 @@
 import { onMounted, computed, watch, ref, reactive } from 'vue'
 import { useData, useRoute, useRouter, ContentData } from 'vitepress'
 import VPContent from 'vitepress/dist/client/theme-default/components/VPContent.vue'
-import { data as posts } from './posts.data.mts'
 import LJYAllPosts from './components/LJYAllPosts.vue'
+import { createContentLoader } from 'vitepress'
+
+const posts = createContentLoader('posts/**/*.md')
 
 const { frontmatter } = useData()
 const route = useRoute()

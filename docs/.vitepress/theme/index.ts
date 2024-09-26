@@ -1,19 +1,17 @@
 // https://vitepress.dev/guide/custom-theme
-import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import DSLayout from './DSLayout.vue'
-import './style.css'
+// import { createContentLoader } from 'vitepress'
+import { toRaw } from '@vue/reactivity'
+
+// import './style.css'
 
 export default {
   extends: DefaultTheme,
-  // Layout: () => {
-  //   return h(DefaultTheme.Layout, null, {
-  //     // https://vitepress.dev/guide/extending-default-theme#layout-slots
-  //   });
-  // },
-  Layout: DSLayout,
   enhanceApp({ app, router, siteData }) {
-    // ...
+    console.log(app)
+
+    // const posts = createContentLoader('posts/**/**.md').load()
+    // console.log('posts', posts)
   }
 } satisfies Theme
