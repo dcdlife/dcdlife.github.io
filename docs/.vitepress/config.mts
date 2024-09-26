@@ -48,6 +48,11 @@ export default defineConfig({
   themeConfig: {
     nav: nav(),
     sidebar: sidebar()
+  },
+  rewrites: {
+    '/posts/index.md': '/posts/books/index.md',
+    '/index.md': '/posts/books/index.md',
+    'index.md': '/posts/books/index.md'
   }
 })
 
