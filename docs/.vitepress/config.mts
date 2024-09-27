@@ -15,7 +15,7 @@ const CategoryMap: Record<string, LJYCategory> = {
   books: {
     cName: '读书',
     cEN: 'books',
-    cIndex: 'index'
+    cIndex: '1'
   },
   collects: {
     cName: '收集',
@@ -31,12 +31,12 @@ const CategoryMap: Record<string, LJYCategory> = {
     cName: '人物',
     cEN: 'persons',
     cIndex: 'index'
-  },
-  techs: {
-    cName: '技术',
-    cEN: 'techs',
-    cIndex: '1'
   }
+  // techs: {
+  //   cName: '技术',
+  //   cEN: 'techs',
+  //   cIndex: '1'
+  // }
 }
 
 // https://vitepress.dev/reference/site-config
@@ -48,11 +48,6 @@ export default defineConfig({
   themeConfig: {
     nav: nav(),
     sidebar: sidebar()
-  },
-  rewrites: {
-    '/posts/index.md': '/posts/books/index.md',
-    '/index.md': '/posts/books/index.md',
-    'index.md': '/posts/books/index.md'
   }
 })
 
