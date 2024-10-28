@@ -17,6 +17,11 @@ const CategoryMap: Record<string, LJYCategory> = {
     cEN: 'books',
     cIndex: '1'
   },
+  techs: {
+    cName: '技术',
+    cEN: 'techs',
+    cIndex: '1'
+  },
   collects: {
     cName: '收集',
     cEN: 'collects',
@@ -32,11 +37,6 @@ const CategoryMap: Record<string, LJYCategory> = {
     cEN: 'persons',
     cIndex: 'index'
   }
-  // techs: {
-  //   cName: '技术',
-  //   cEN: 'techs',
-  //   cIndex: '1'
-  // }
 }
 
 // https://vitepress.dev/reference/site-config
