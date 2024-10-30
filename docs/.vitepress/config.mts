@@ -22,13 +22,13 @@ const CategoryMap: Record<string, LJYCategory> = {
     cEN: 'techs',
     cIndex: '1'
   },
-  collects: {
-    cName: '收集',
-    cEN: 'collects',
-    cIndex: 'index'
-  },
+  // collects: {
+  //   cName: '收集',
+  //   cEN: 'collects',
+  //   cIndex: 'index'
+  // },
   learning: {
-    cName: '学点啥',
+    cName: '学课',
     cEN: 'learning',
     cIndex: '1'
   },
