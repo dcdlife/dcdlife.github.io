@@ -10,6 +10,8 @@ category: books
 划删除线的书，标识已读完且以生成读书笔记，点击可跳转。
 ```
 
+<div style="color: red;">进行中《穷查理宝典》</div>
+
 ### 写作系列书籍
 
 - <s>[《左手阅读，右手写作》笑薇](./posts/books/1.md)</s>

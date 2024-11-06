@@ -17,9 +17,9 @@ const CategoryMap: Record<string, LJYCategory> = {
     cEN: 'books',
     cIndex: '1'
   },
-  techs: {
-    cName: '技术',
-    cEN: 'techs',
+  writes: {
+    cName: '写点啥',
+    cEN: 'writes',
     cIndex: '1'
   },
   // collects: {
@@ -27,6 +27,11 @@ const CategoryMap: Record<string, LJYCategory> = {
   //   cEN: 'collects',
   //   cIndex: 'index'
   // },
+  techs: {
+    cName: '技术',
+    cEN: 'techs',
+    cIndex: '1'
+  },
   learning: {
     cName: '学课',
     cEN: 'learning',
