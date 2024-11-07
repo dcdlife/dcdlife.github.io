@@ -22,11 +22,6 @@ const CategoryMap: Record<string, LJYCategory> = {
     cEN: 'writes',
     cIndex: '1'
   },
-  // collects: {
-  //   cName: '收集',
-  //   cEN: 'collects',
-  //   cIndex: 'index'
-  // },
   techs: {
     cName: '技术',
     cEN: 'techs',
@@ -36,17 +31,12 @@ const CategoryMap: Record<string, LJYCategory> = {
     cName: '学课',
     cEN: 'learning',
     cIndex: '1'
-  },
-  persons: {
-    cName: '人物',
-    cEN: 'persons',
-    cIndex: 'index'
   }
 }
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: '六检一',
+  title: '检一',
   base: '/',
   appearance: false,
   description: "This is DCD's life, record all studies.",
