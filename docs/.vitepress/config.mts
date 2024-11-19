@@ -36,7 +36,7 @@ const CategoryMap: Record<string, LJYCategory> = {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: '检一',
+  title: '六检一',
   base: '/',
   appearance: false,
   description: "This is DCD's life, record all studies.",
